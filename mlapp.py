@@ -76,7 +76,7 @@ def show_historical_data():
     st.write(df)
 
     st.line_chart(df.set_index("Date")["Actual Refills"])
-    st.area_chart(df.set_index("Date")[["weather condition", "Quality Rating", "special Event"]])
+    st.area_chart(df.set_index("Date")["weather condition", "Quality Rating", "special Event"])
 
 
 def show_settings():
