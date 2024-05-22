@@ -50,7 +50,7 @@ def show_predictions():
         "Predicted Refills": [130, 140, 145, 150, 160, 155, 150],
         "Quality Rating": [5, 3, 4, 3, 5, 5, 4],
         "weather conditions": ["Sunny","Rainy", "Cloudy","Sunny","Rainy", "Cloudy","Sunny"],
-        "Refill Process": ["Manual","Manual" , "Manual", "Manual", "Manual","Manual","Manual"],,
+        "Refill Process": ["Manual","Manual" , "Manual", "Manual", "Manual","Manual","Manual"],
         "Special Event": ["No", "No", "No", "No", "Yes", "No", "No"],
         "Marketing Campaign": ["Yes", "No", "Yes", "No", "Yes", "No", "Yes"]
     }
