@@ -46,11 +46,11 @@ def show_predictions():
     st.subheader("7-Day Refill Predictions")
     # Dummy data for demonstration
     data = {
-        "Date": pd.date_range(start="2024-05-01", periods=7),
+        "Date": pd.date_range(start="2024-06-01", periods=7),
         "Predicted Refills": [130, 140, 145, 150, 160, 155, 150],
-        "Temperature": [25, 27, 28, 29, 30, 26, 25],
-        "Precipitation": [0, 2, 0, 1, 0, 5, 0],
-        "Humidity": [60, 55, 50, 52, 48, 65, 60],
+        "Quality Rating": [5, 3, 4, 3, 5, 5, 4],
+        "weather conditions": ["Sunny","Rainy", "Cloudy","Sunny","Rainy", "Cloudy","Sunny"],
+        "Refill Process": ["Manual","Manual" , "Manual", "Manual", "Manual","Manual","Manual"],,
         "Special Event": ["No", "No", "No", "No", "Yes", "No", "No"],
         "Marketing Campaign": ["Yes", "No", "Yes", "No", "Yes", "No", "Yes"]
     }
@@ -66,9 +66,9 @@ def show_historical_data():
     data = {
         "Date": pd.date_range(start="2024-04-01", periods=30),
         "Actual Refills": np.random.randint(100, 200, size=30),
-        "Temperature": np.random.randint(20, 35, size=30),
-        "Precipitation": np.random.randint(0, 10, size=30),
-        "Humidity": np.random.randint(40, 70, size=30),
+        "Quality Rating": np.random.randint(3,5, size=30),
+        "weather condition": np.random.choice(["Sunny","Rainy","Cloudy"],size=30),
+        "Refill Process": np.random.choice(["Manual","Manual"], size=30),
         "Special Event": np.random.choice(["No", "Yes"], size=30),
         "Marketing Campaign": np.random.choice(["No", "Yes"], size=30)
     }
@@ -76,7 +76,8 @@ def show_historical_data():
     st.write(df)
 
     st.line_chart(df.set_index("Date")["Actual Refills"])
-    st.area_chart(df.set_index("Date")[["Temperature", "Precipitation", "Humidity"]])
+    st.area_chart(df.set_index("Date")[["weather condition", "Quality Rating", "special Event"]])
+
 
 def show_settings():
     st.subheader("Settings")
